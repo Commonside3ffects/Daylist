@@ -255,11 +255,17 @@ h1{font-size:2.125rem;font-weight:700;letter-spacing:-.022em}
 input[type=time]{border:0;border-radius:12px;background:var(--card);height:46px;padding:0 14px;font-size:1.0625rem}
 input[type=time]{font-variant-numeric:tabular-nums;cursor:pointer}
 input[type=time]::-webkit-calendar-picker-indicator{margin-left:4px;cursor:pointer}
-@media (min-width: 860px){.times{grid-template-columns:1fr}}
+@media (min-width: 860px){
+  .times{grid-template-columns:1fr;gap:8px}
+  .times .field{flex-direction:row;align-items:center;justify-content:space-between;gap:8px;background:var(--card);border-radius:12px;padding:0 4px 0 14px;height:46px}
+  .times .field label{padding-left:0;font-size:1.0625rem;text-transform:none;letter-spacing:0;color:var(--ink)}
+  .times input[type=time]{width:auto;flex:0 1 auto;height:40px;padding:0 10px;background:transparent}
+}
 .swatches{background:var(--card);border-radius:12px;padding:10px 12px;gap:12px}
 .sw input{width:32px;height:32px}
 .sw span{width:32px;height:32px;border-radius:50%;border:3px solid var(--card)}
 .sw input:checked+span{box-shadow:0 0 0 2px var(--cf)}
+@media (min-width: 860px){.swatches{flex-wrap:nowrap;gap:9px;padding:9px 12px}.sw input,.sw span{width:26px;height:26px}.sw span{border-width:2px}}
 .actions .btn{height:46px;border-radius:12px}
 .set{background:var(--side);border-radius:14px}
 .seg{background:var(--fill);border-radius:9px;padding:2px}

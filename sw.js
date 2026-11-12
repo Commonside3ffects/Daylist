@@ -1,5 +1,5 @@
 // Daylist offline support: serve the saved copy straight away, refresh it in the background.
-const CACHE = 'daylist-v5';
+const CACHE = 'daylist-v6';
 const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => {
