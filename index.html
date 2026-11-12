@@ -267,6 +267,10 @@ input[type=time]::-webkit-calendar-picker-indicator{margin-left:4px;cursor:point
 .sw input:checked+span{box-shadow:0 0 0 2px var(--cf)}
 @media (min-width: 860px){.swatches{flex-wrap:nowrap;gap:9px;padding:9px 12px}.sw input,.sw span{width:26px;height:26px}.sw span{border-width:2px}}
 .actions .btn{height:46px;border-radius:12px}
+.actions .btn.ib{width:46px;padding:0;justify-content:center;background:var(--fill);color:var(--ink)}
+.actions .btn.ib.danger{color:var(--danger)}
+.actions .btn.new{background:var(--now);color:#fff;padding:0 22px}
+:root.dark .actions .btn.new{color:#1C1C1F}
 .set{background:var(--side);border-radius:14px}
 .seg{background:var(--fill);border-radius:9px;padding:2px}
 .seg span{border-radius:7px;min-height:32px;color:var(--ink);font-weight:500}
@@ -298,6 +302,9 @@ input[type=time]::-webkit-calendar-picker-indicator{margin-left:4px;cursor:point
   .sw input,.sw span{width:22px;height:22px}
   .actions{gap:6px}
   .actions .btn{height:34px;font-size:.8125rem;border-radius:10px;padding:0 12px}
+  .actions .btn.ib{width:34px;padding:0}
+  .actions .btn.ib svg{width:16px;height:16px}
+  .actions .btn.new{padding:0 18px}
 }
 </style>
 
@@ -345,9 +352,9 @@ input[type=time]::-webkit-calendar-picker-indicator{margin-left:4px;cursor:point
         <label class="row" id="doneRow"><input type="checkbox" id="fDone"> Done</label>
         <p class="err" id="err" role="alert" hidden></p>
         <div class="actions">
-          <button class="btn danger" type="button" id="delBtn">Delete</button>
+          <button class="btn danger ib" type="button" id="delBtn" aria-label="Delete" title="Delete"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12M9 7V4h6v3"/></svg></button>
           <span class="spacer"></span>
-          <button class="btn" type="button" id="dupBtn">Duplicate</button>
+          <button class="btn ib" type="button" id="dupBtn" aria-label="Duplicate" title="Duplicate"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg></button>
           <button class="btn new" type="submit" id="addBtn">Add event</button>
         </div>
       </form>
