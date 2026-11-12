@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Daylist</title>
 <meta name="description" content="Daylist: plan your day on a timeline.">
-<meta name="theme-color" content="#F4F3F2">
+<meta name="theme-color" content="#FFFFFF">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Daylist">
@@ -25,10 +25,10 @@ img{max-width:100%}
 /* Layout: calendar day view. Wide: left rail (mini month, then the day's schedule or the event inspector) beside the timeline. Phone: header + week strip + timeline, inspector as a bottom sheet. */
 :root{
   /* Theme is the user's setting (class on :root), not the system's: soft neutral greys with gently tinted events. */
-  --bg:#F4F3F2; --side:#ECEBE9; --surface:#FCFCFB; --line:#E6E4E1; --line-strong:#D6D3CF;
-  --ink:#2A2A2C; --muted:#66666A; --accent:#2A2A2C; --on-accent:#FFFFFF; --accent-soft:#E6E4E1;
+  --bg:#FFFFFF; --side:#FFFFFF; --surface:#FFFFFF; --line:#E3E5E8; --line-strong:#DADCE0;
+  --ink:#1F1F1F; --muted:#70757A; --accent:#1F1F1F; --on-accent:#FFFFFF; --accent-soft:#F1F3F4;
   --now:#6B3FC0; --danger:#B4232A; --shadow:rgba(0,0,0,.14);
-  --fill:#E0DEDB; --card:#FCFCFB; --green:#1F8A70; --seg-on:#FCFCFB;
+  --fill:#E8EAED; --card:#F1F3F4; --green:#1F8A70; --seg-on:#FFFFFF;
   --lav-bg:#EEE6FB;  --lav-fg:#6B3FC0;
   --sage-bg:#DDF5EE; --sage-fg:#0F6B58;
   --sun-bg:#FDEBDD;  --sun-fg:#A8480C;
@@ -1129,7 +1129,7 @@ input[type=time]::-webkit-calendar-picker-indicator{margin-left:4px;cursor:point
 <script>
 (function(){
   var meta = document.querySelector('meta[name="theme-color"]');
-  function sync(){ meta.setAttribute('content', document.documentElement.classList.contains('dark') ? '#1C1C1F' : '#F4F3F2'); }
+  function sync(){ meta.setAttribute('content', document.documentElement.classList.contains('dark') ? '#1C1C1F' : '#FFFFFF'); }
   new MutationObserver(sync).observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
   sync();
   if('serviceWorker' in navigator){ window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); }); }
