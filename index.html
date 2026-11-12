@@ -253,6 +253,9 @@ h1{font-size:2.125rem;font-weight:700;letter-spacing:-.022em}
 .field label{padding-left:14px}
 .legend{padding:0 0 0 14px;margin-bottom:6px}
 input[type=time]{border:0;border-radius:12px;background:var(--card);height:46px;padding:0 14px;font-size:1.0625rem}
+input[type=time]{font-variant-numeric:tabular-nums;cursor:pointer}
+input[type=time]::-webkit-calendar-picker-indicator{margin-left:4px;cursor:pointer}
+@media (min-width: 860px){.times{grid-template-columns:1fr}}
 .swatches{background:var(--card);border-radius:12px;padding:10px 12px;gap:12px}
 .sw input{width:32px;height:32px}
 .sw span{width:32px;height:32px;border-radius:50%;border:3px solid var(--card)}
@@ -758,6 +761,7 @@ input[type=time]{border:0;border-radius:12px;background:var(--card);height:46px;
     if($('fAll').checked) t.allDay = true; else delete t.allDay;
     $('timesRow').hidden = !!t.allDay; changed();
   });
+  ['fStart','fEnd'].forEach(function(id){ $(id).addEventListener('click', function(){ try{ this.showPicker && this.showPicker(); }catch(e){} }); });
   $('fStart').addEventListener('change', function(){
     var t = getEv(sel), v = fromInput($('fStart').value); if(!t || v === null) return;
     ensureUndo();
