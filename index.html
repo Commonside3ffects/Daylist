@@ -276,6 +276,29 @@ input[type=time]::-webkit-calendar-picker-indicator{margin-left:4px;cursor:point
 @media (min-width: 860px){
   .insp{border:0;border-radius:14px;padding:14px}
 }
+/* compact event panel on wide screens */
+@media (min-width: 860px){
+  .insp{padding:10px 12px 12px}
+  .insp-top{margin-bottom:2px}
+  .insp-top h2{font-size:.9375rem}
+  .x{width:26px;height:26px}
+  .x svg{width:14px;height:14px}
+  .insp form{gap:7px}
+  #fTitle{padding:8px 12px;font-size:.9375rem;border-radius:10px}
+  .row{min-height:38px;padding:0 12px;font-size:.9375rem;border-radius:10px}
+  .row input[type=checkbox]{width:40px;height:24px}
+  .row input[type=checkbox]::after{width:20px;height:20px}
+  .row input[type=checkbox]:checked::after{transform:translateX(16px)}
+  .times{gap:7px}
+  .times .field{height:38px;padding:0 2px 0 12px;border-radius:10px}
+  .times .field label{font-size:.9375rem}
+  .times input[type=time]{height:34px;font-size:.9375rem;padding:0 8px}
+  .legend{font-size:.6875rem;margin-bottom:4px;padding-left:12px}
+  .swatches{padding:7px 10px;gap:8px;border-radius:10px}
+  .sw input,.sw span{width:22px;height:22px}
+  .actions{gap:6px}
+  .actions .btn{height:34px;font-size:.8125rem;border-radius:10px;padding:0 12px}
+}
 </style>
 
 <div class="app">
